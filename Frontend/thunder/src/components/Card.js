@@ -1,41 +1,131 @@
 import React from "react";
-
+import CardData from "./CardData";
 let items = [
-  "item-0",
-  "item-1",
-  "item-2",
-  "item-3",
-  "item-4",
-  "item-5",
-  "item-6",
-  "item-7",
-  "item-0",
-  "item-1",
-  "item-2",
-  "item-3",
-  "item-4",
-  "item-5",
-  "item-6",
-  "item-7",
+  {
+    name: "item-0",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "500000",
+    rating: "4.5",
+  },
+  {
+    name: "item-0",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "100",
+    rating: "4.5",
+  },
+  {
+    name: "item-2",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "100",
+    rating: "4.5",
+  },
+  {
+    name: "item-3",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "100",
+    rating: "4.5",
+  },
+  {
+    name: "item-4",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "100",
+    rating: "4.5",
+  },
+  {
+    name: "item-5",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "100",
+    rating: "4.5",
+  },
+  {
+    name: "item-6",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "100",
+    rating: "4.5",
+  },
+  {
+    name: "item-7",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "100",
+    rating: "4.5",
+  },
+  {
+    name: "item-0",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "500000",
+    rating: "4.5",
+  },
+  {
+    name: "item-0",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "100",
+    rating: "4.5",
+  },
+  {
+    name: "item-2",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "100",
+    rating: "4.5",
+  },
+  {
+    name: "item-3",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "100",
+    rating: "4.5",
+  },
+  {
+    name: "item-4",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "100",
+    rating: "4.5",
+  },
+  {
+    name: "item-5",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "100",
+    rating: "4.5",
+  },
+  {
+    name: "item-6",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "100",
+    rating: "4.5",
+  },
+  {
+    name: "item-7",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sit quos ad doloribus dolores nisi",
+    price: "100",
+    rating: "4.5",
+  },
 ];
 
 const Card = () => {
   return (
-    <div className=" d-flex row justify-content-center w-100 m-0">
-      {items.map((item) => {
-        return (
-          <div className="card col-12 col-sm-6 col-md-3 p-1">
-            <img
-              src="https://placebeard.it/640x360"
-              className="card-img-top"
-              alt="..."
-            />
-            <div className="card-body">
-              <p className="card-text">{item}</p>
-            </div>
-          </div>
-        );
-      })}
+    <div className=" d-flex row justify-content-center w-100 m-0 p-0">
+      {items.map((item) => (
+        <CardData
+          name={item.name}
+          description={item.description}
+          price={item.price}
+          rating={item.rating}
+        />
+      ))}
     </div>
   );
 };

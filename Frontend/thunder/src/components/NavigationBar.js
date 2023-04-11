@@ -1,8 +1,8 @@
 import React from "react";
 
-const goToCart = () => {
-  console.log("hello cart");
-};
+// const goToCart = () => {
+//   console.log("hello cart");
+// };
 
 const NavigationBar = () => {
   return (

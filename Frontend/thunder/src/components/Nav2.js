@@ -105,9 +105,7 @@ const NavigationBar = () => {
                   type="button"
                   className="btn btn-outline-* d-none d-sm-block col-sm-1"
                 >
-                  <i className="fas fa-search">
-                    <SearchIcon />
-                  </i>
+                  <SearchIcon />
                 </button>
               </div>
             </li>
