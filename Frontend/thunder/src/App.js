@@ -8,6 +8,7 @@ import Card from "./components/Card";
 import Card2 from "./components/Card2";
 import Slider2 from "./components/Slider2";
 import Sidebar from "./components/Sidebar";
+import SideBarTest from "./components/SideBarTest";
 function App() {
   return (
     <div className="App">
@@ -18,7 +19,7 @@ function App() {
       {/* <Slider2 />
       <Card /> */}
       <div className="d-flex justify-content-center">
-        <Sidebar />
+        <SideBarTest />
         <div>
           <Slider2 />
           <Card />
