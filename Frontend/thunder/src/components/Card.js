@@ -24,7 +24,7 @@ const Card = () => {
     <div className=" d-flex row justify-content-center w-100 m-0">
       {items.map((item) => {
         return (
-          <div className="card col-12 col-sm-6 col-md-3">
+          <div className="card col-12 col-sm-6 col-md-3 p-1">
             <img
               src="https://placebeard.it/640x360"
               className="card-img-top"

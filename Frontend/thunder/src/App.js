@@ -18,8 +18,8 @@ function App() {
       className="App d-flex-column justify-content-center vh-100"
       style={{ border: "solid 3px red" }}
     >
-      <Nav2 />
-      <LoginForm2 />
+      {/* <Nav2 /> */}
+      <LoginForm />
     </div>
   );
 }
@@ -32,10 +32,6 @@ export default App;
 //card
 
 <div className="d-flex justify-content-left">
-  <SideBarTest />
-  {/* <div>
-          <Slider2 />
-          <Card />
-        </div> */}
-  <Product />
+  {/* <SideBarTest /> */}
+  <LoginForm2 />
 </div>;
