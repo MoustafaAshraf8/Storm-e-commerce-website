@@ -1,0 +1,211 @@
+.contain {
+  background-image: url(./assets/Images/desk.jpg);
+  /* background-color: goldenrod; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+/*box contain all*/
+
+.loginform {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 420px;
+  height: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: auto;
+
+  position: absolute;
+  top: calc((100% - 400px) / 2);
+  left: calc((100% - 400px) / 2);
+}
+
+/*___________________________________________________________________________________________________________*/
+
+h1 {
+  width: 400px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: auto auto 20px auto;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+.inputbox {
+  width: 400px;
+  height: 300px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 20px 0px 0px 0px;
+  font-size: 20px;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+.email {
+  padding: 5px;
+  margin: 10px;
+  width: auto;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.email-label {
+  margin-right: 20px;
+  width: auto;
+}
+.email-input {
+  margin-left: auto;
+  width: auto;
+  border-radius: 10px;
+}
+
+.email-input:focus {
+  background-color: coral;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+.password {
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.pass-label {
+  margin-right: 20px;
+}
+.pass-input {
+  width: 265px;
+  border-radius: 10px;
+}
+
+.pass-input:focus {
+  background-color: coral;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+.btn0 {
+  font-size: 20px;
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.btn0:hover {
+  background-color: gold;
+  cursor: pointer;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+.radio0 {
+  float: left;
+  margin: 4px 10px 4px 10px;
+}
+.radio0:hover {
+  cursor: pointer;
+}
+
+.rememberme {
+  float: left;
+  font-size: 15px;
+  color: white;
+}
+
+.forgotpass {
+  text-decoration: none;
+  margin-top: 0px;
+  margin-bottom: 4px;
+  text-align: left;
+  color: black;
+  font-size: 15px;
+  float: right;
+  color: white;
+}
+.forgotpass:hover {
+  color: coral;
+  cursor: pointer;
+}
+
+.rememberme {
+  color: white;
+}
+
+.rememberme:hover {
+  color: coral;
+  cursor: pointer;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+.content {
+  margin: 0px auto;
+  width: 400px;
+}
+
+.or {
+  margin-top: 0px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  background: linear-gradient(rgb(255, 255, 255) 0 0) left,
+    linear-gradient(rgb(255, 255, 255) 0 0) right;
+  background-size: 40% 1px;
+  background-repeat: no-repeat;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+.socialacc {
+  font-size: 15px;
+  color: white;
+}
+
+/*___________________________________________________________________________________________________________*/
+
+.socialacc {
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.facebookbtn {
+  background-color: rgb(10, 85, 197);
+  border-radius: 10px;
+  margin-left: 10px;
+  width: calc((400 - 20 - 30) / 3);
+}
+
+.tweeterbtn {
+  background-color: rgb(29, 161, 242);
+  border-radius: 10px;
+  margin-left: 10px;
+  width: calc((400 - 20 - 30) / 3);
+}
+
+.gmailbtn {
+  background-color: rgb(181, 71, 38);
+  border-radius: 10px;
+  margin-left: 10px;
+  width: calc((400 - 20 - 30) / 3);
+}
+
+.facebookbtn,
+.tweeterbtn,
+.gmailbtn:hover {
+  cursor: pointer;
+}
