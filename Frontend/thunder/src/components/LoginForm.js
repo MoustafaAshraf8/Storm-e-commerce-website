@@ -2,17 +2,17 @@ import React from "react";
 
 const LoginForm = () => {
   return (
-    <>
-      <form class="loginform" action="login.html" method="POST">
+    <div className="contain" style={{ border: "solid 3px blue" }}>
+      <form className="loginform" action="login.html" method="POST">
         <h1>Please Login</h1>
 
-        <div class="inputbox">
-          <div class="email">
-            <label class="email-label" for="emailbox">
+        <div className="inputbox">
+          <div className="email">
+            <label className="email-label" for="emailbox">
               E-mail:
             </label>
             <input
-              class="email-input"
+              className="email-input"
               type="email"
               name="emailbox"
               placeholder="ABC@gmail.com"
@@ -21,12 +21,12 @@ const LoginForm = () => {
             />
           </div>
 
-          <div class="password">
-            <label class="pass-label" for="passwordbox">
+          <div className="password">
+            <label className="pass-label" for="passwordbox">
               Password:
             </label>
             <input
-              class="pass-input"
+              className="pass-input"
               type="password"
               name="passwordbox"
               placeholder="********"
@@ -35,45 +35,50 @@ const LoginForm = () => {
             />
           </div>
 
-          <input class="btn0" type="button" name="submitbtn" value="Login" />
+          <input
+            className="btn0"
+            type="button"
+            name="submitbtn"
+            value="Login"
+          />
 
           <br />
           <div>
-            <input class="radio0" type="radio" name="rememberme" />
-            <label class="rememberme" for="rememberme">
+            <input className="radio0" type="radio" name="rememberme" />
+            <label className="rememberme" for="rememberme">
               remember me
             </label>
           </div>
 
-          <a href="./mainhtml.html" class="forgotpass">
+          <a href="#" className="forgotpass">
             {" "}
             forgot password
           </a>
 
           <br />
-          <div class="content">
-            <p class="or">or</p>
+          <div className="content">
+            <p className="or">or</p>
           </div>
 
-          <p class="socialacc">Sign up with your social media account</p>
+          <p className="socialacc">Sign up with your social media account</p>
 
-          <div class="socialacc">
+          <div className="socialacc">
             <input
-              class="facebookbtn"
+              className="facebookbtn"
               type="button"
               name="submitbtn"
               value="facebook"
               formtarget="_blank"
             />
             <input
-              class="tweeterbtn"
+              className="tweeterbtn"
               type="button"
               name="submitbtn"
               value="tweeter"
               formtarget="_blank"
             />
             <input
-              class="gmailbtn"
+              className="gmailbtn"
               type="button"
               name="submitbtn"
               value="G-mail"
@@ -82,7 +87,7 @@ const LoginForm = () => {
           </div>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 

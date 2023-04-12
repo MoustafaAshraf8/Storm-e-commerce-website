@@ -9,7 +9,7 @@ const goToCart = () => {
 const NavigationBar = () => {
   return (
     <nav
-      className="container-fluid nav justify-content-left navbar navbar-expand-md  bg-primary bg-gradient navbarscroll p-0"
+      className="container-fluid nav justify-content-left navbar navbar-expand-md  bg-primary bg-gradient navbarscroll p-0 m-0"
       data-bs-theme="dark"
       style={{ border: "solid 3px green" }}
     >
@@ -43,18 +43,18 @@ const NavigationBar = () => {
             style={{ border: "solid 3px black" }}
           >
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 <HomeSharpIcon />
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 Home
               </a>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 Home
               </a>
             </li>
@@ -92,7 +92,7 @@ const NavigationBar = () => {
             {/* start: search bar */}
             <li className="nav-item w-100">
               <div className="input-group w-100 p-0">
-                <div className="form-outline d-flex col-12 col-sm-11 pt-1">
+                <div className="form-outline d-flex col-12 col-sm-11 h-100 pt-2">
                   <input
                     type="search"
                     id="form1"
@@ -105,9 +105,7 @@ const NavigationBar = () => {
                   type="button"
                   className="btn btn-outline-* d-none d-sm-block col-sm-1"
                 >
-                  <i className="fas fa-search">
-                    <SearchIcon />
-                  </i>
+                  <SearchIcon />
                 </button>
               </div>
             </li>
