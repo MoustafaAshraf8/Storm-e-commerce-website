@@ -2,64 +2,90 @@ import React from "react";
 
 const LoginForm = () => {
   return (
-    <div
-      className="vh-100 d-flex justify-content-center align-items-center"
-      style={{
-        border: "solid 3px yellow",
-        backgroundImage:
-          "URL('https://images.unsplash.com/photo-1633174076338-ac0669cf0d40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80')",
-      }}
-    >
-      <form
-        className=" col-3 container p-0 d-flex-column justify-content-center"
-        action="#"
-        style={{ border: "solid 3px brown" }}
-      >
-        <div className="emailInput input-group mb-2">
-          <div className="input-group-prepend col-2 d-none d-sm-block">
-            <span
-              className="input-group-text w-100 d-none d-sm-block"
-              id="addon-wrapping"
-            >
-              Email
-            </span>
-          </div>
-          <div className="input-group-prepend col-2 d-block d-sm-none">
-            <span
-              className="input-group-text w-100 d-none d-sm-block"
-              id="addon-wrapping"
-            >
-              @
-            </span>
-          </div>
-          <input
-            type="email"
-            className="form-control"
-            placeholder="abc@outlook.com"
-            aria-label="Username"
-            aria-describedby="addon-wrapping"
-          />
-        </div>
+    <section classNameName="" style={{ height: "100%", position: "fixed" }}>
+      <div classNameName="container-fluid">
+        <div classNameName="row">
+          <div classNameName="col-sm-6 text-black">
+            <div classNameName="px-5 ms-xl-4">
+              <i
+                classNameName="fas fa-crow fa-2x me-3 pt-5 mt-xl-4"
+                style={{ color: "#709085" }}
+              ></i>
+              {/* <span classNameName="h1 fw-bold mb-0">Logo</span> */}
+              <img
+                src="./Images/logo.jpg"
+                style={{ width: "200px", height: "200px" }}
+                alt=""
+              />
+            </div>
 
-        <div className="passwordInput input-group mb-2">
-          <div className="input-group-prepend col-2">
-            <span className="input-group-text" id="addon-wrapping">
-              Password
-            </span>
+            <div classNameName="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+              <form style={{ width: "23rem" }}>
+                <h3
+                  classNameName="fw-normal mb-3 pb-3"
+                  style={{ letterSpacing: "1px" }}
+                >
+                  Log in
+                </h3>
+
+                <div className="input-group mb-3">
+                  <span className="input-group-text" id="basic-addon1">
+                    @
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Username"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+
+                <div classNameName="form-outline mb-4">
+                  <input
+                    type="password"
+                    id="form2Example28"
+                    classNameName="form-control form-control-lg"
+                  />
+                  <label classNameName="form-label" for="form2Example28">
+                    Password
+                  </label>
+                </div>
+
+                <div classNameName="pt-1 mb-4">
+                  <button
+                    classNameName="btn btn-info btn-lg btn-block"
+                    type="button"
+                  >
+                    Login
+                  </button>
+                </div>
+
+                <p classNameName="small mb-5 pb-lg-2">
+                  <a classNameName="text-muted" href="#!">
+                    Forgot password?
+                  </a>
+                </p>
+                <p>
+                  Don't have an account?{" "}
+                  <a href="#!" classNameName="link-info">
+                    Register here
+                  </a>
+                </p>
+              </form>
+            </div>
           </div>
-          <input
-            type="password"
-            className="form-control"
-            placeholder="*********************"
-            aria-label="Username"
-            aria-describedby="addon-wrapping"
-          />
+          <div classNameName="col-sm-6 px-0 d-none d-sm-block">
+            <img
+              src="https://images.wallpaperscraft.com/image/single/lighthouse_waves_storm_149202_1920x1200.jpg"
+              alt="Login image"
+              classNameName="w-100 vh-100"
+              style={{ objectFit: "cover", objectPosition: "left" }}
+            />
+          </div>
         </div>
-        <button type="submit" class="btn btn-primary">
-          login
-        </button>
-      </form>
-    </div>
+      </div>
+    </section>
   );
 };
 
