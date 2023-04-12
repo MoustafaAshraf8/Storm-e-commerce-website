@@ -21,7 +21,7 @@ function App() {
       style={{ border: "solid 3px red" }}
     >
       <Nav2 />
-      <LoginTest />
+      <Product />
     </div>
   );
 }
