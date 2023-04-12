@@ -2,13 +2,17 @@ import React from "react";
 
 const CardData = (props) => {
   console.log("a7a");
+  let productPath = "product/" + props.id;
   return (
     <div className="card border-0 col-12 col-sm-6 col-md-3 p-3 m-0">
-      <img
-        src="https://placebeard.it/640x360"
-        className="card-img-top"
-        alt="..."
-      />
+      <a href={productPath}>
+        <img
+          src="https://placebeard.it/640x360"
+          //src={props.imgURL}
+          className="card-img-top"
+          alt="..."
+        />
+      </a>
       <div className="card-body">
         <p className="card-text">{props.name}</p>
       </div>

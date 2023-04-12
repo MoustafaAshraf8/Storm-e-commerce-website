@@ -4,13 +4,12 @@ import "./Custom.css";
 //_____________________________pages______________________________________
 import HomePage from "./Page/HomePage";
 import Product from "./Page/Product";
+import LoginForm from "./Page/LoginForm";
 //_____________________________components_____________________________
 import Nav2 from "./components/Nav2";
 import Card from "./components/Card";
 import Slider2 from "./components/Slider2";
 import SideBarTest from "./components/SideBarTest";
-import LoginForm from "./components/LoginForm";
-import LoginForm2 from "./components/LoginForm2";
 
 function App() {
   return (
@@ -19,10 +18,7 @@ function App() {
       style={{ border: "solid 3px red" }}
     >
       <Nav2 />
-      <div className="d-flex justify-content-left">
-        <SideBarTest />
-        <Card />
-      </div>
+      <LoginForm />
     </div>
   );
 }
@@ -33,8 +29,3 @@ export default App;
 //sideBarTest
 //slider2
 //card
-
-<div className="d-flex justify-content-left">
-  {/* <SideBarTest /> */}
-  <LoginForm2 />
-</div>;

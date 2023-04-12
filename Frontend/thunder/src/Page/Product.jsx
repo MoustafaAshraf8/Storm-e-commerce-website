@@ -3,8 +3,8 @@ import React from "react";
 const Product = () => {
   return (
     <div
-      className="container-fluid d-flex justify-content-left h-100"
-      style={{ border: "solid 3px red" }}
+      className="container-fluid d-flex justify-content-center"
+      style={{ border: "solid 3px blue" }}
     >
       <div className="col-6 d-flex-column justify-content-center">
         <img
