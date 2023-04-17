@@ -16,7 +16,7 @@ const Product = (props) => {
           <img
             className="img-fluid ps-0"
             style={{ height: "100%", maxWidth: "75%" }}
-            src="./Images/storm.jpg"
+            src="https://placebeard.it/640x360"
             alt="..."
           />
         </div>
