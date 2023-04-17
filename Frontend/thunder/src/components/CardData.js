@@ -2,7 +2,8 @@ import React from "react";
 
 const CardData = (props) => {
   console.log("a7a");
-  let productPath = "product/" + props.id;
+  //let productPath = "product/" + props.id;
+  let productPath = "/product/id";
   return (
     <div className="card border-0 col-12 col-sm-6 col-md-3 p-3 m-0">
       <a href={productPath}>
