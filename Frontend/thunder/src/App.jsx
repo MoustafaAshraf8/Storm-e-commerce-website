@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import "./Custom.css";
+import { Routes, Route, Link } from "react-router-dom";
 //_____________________________pages______________________________________
 import HomePage from "./Page/HomePage";
 import Product from "./Page/Product";
@@ -21,7 +22,11 @@ function App() {
       style={{ border: "solid 3px red" }}
     >
       <Nav2 />
-      <Product />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginTest />} />
+        <Route path="/product/id" element={<Product />} />
+      </Routes>
     </div>
   );
 }

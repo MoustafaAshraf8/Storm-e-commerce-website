@@ -2,6 +2,7 @@ import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import HomeSharpIcon from "@mui/icons-material/HomeSharp";
+import LoginIcon from "@mui/icons-material/Login";
 const goToCart = () => {
   console.log("hello cart");
 };
@@ -18,7 +19,7 @@ const NavigationBar = () => {
         style={{ border: "solid 3px red" }}
       >
         {/* website logo */}
-        <a className="navbar-brand ms-2 mr-0" href="#">
+        <a className="navbar-brand ms-2 mr-0" href="/">
           Website
         </a>
         <button
@@ -47,12 +48,6 @@ const NavigationBar = () => {
                 <HomeSharpIcon />
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                Home
-              </a>
-            </li>
-
             <li className="nav-item">
               <a className="nav-link" href="/">
                 Home
@@ -113,6 +108,16 @@ const NavigationBar = () => {
             <li className="nav-item">
               <a className="nav-link" href="#">
                 <ShoppingCartIcon />
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/login">
+                <span className="d-none d-sm-inline">
+                  <LoginIcon />
+                </span>
+                <span className="d-inline d-sm-none">
+                  <LoginIcon />
+                </span>
               </a>
             </li>
           </ul>
