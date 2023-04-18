@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import LockIcon from "@mui/icons-material/Lock";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-const loginTest = () => {
+const LoginTest = () => {
+  let [Email, setEmail] = useState("");
+  let [Password, setPassword] = useState({
+    value: "",
+    isTouched: false,
+  });
+
+  let emailChanged = (e) => {
+    setEmail(e.target.value);
+  };
+  let passwordChanged = (e) => {
+    setPassword({ ...Password, value: e.target.value });
+    console.log(Password);
+  };
   return (
     <div
       className="container-fluid d-flex align-items-center justify-content-center"
@@ -29,6 +42,8 @@ const loginTest = () => {
               <AlternateEmailIcon />
             </span> */}
             <input
+              value={Email}
+              onChange={emailChanged}
               type="email"
               class="form-control"
               placeholder="email"
@@ -45,6 +60,11 @@ const loginTest = () => {
               <LockIcon />
             </span> */}
             <input
+              value={Password.value}
+              onChange={passwordChanged}
+              onBlur={() => {
+                setPassword({ ...Password, isTouched: true });
+              }}
               type="password"
               class="form-control"
               placeholder="password"
@@ -53,6 +73,9 @@ const loginTest = () => {
               required
             />
           </div>
+          {Password.isTouched && Password.value.length < 8 ? (
+            <p style={{ color: "red" }}>password must be of min 8 length</p>
+          ) : null}
 
           {/* remember me + forgot password */}
 
@@ -117,4 +140,4 @@ const loginTest = () => {
   );
 };
 
-export default loginTest;
+export default LoginTest;
