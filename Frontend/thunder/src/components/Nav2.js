@@ -3,6 +3,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import HomeSharpIcon from "@mui/icons-material/HomeSharp";
 import LoginIcon from "@mui/icons-material/Login";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 const goToCart = () => {
   console.log("hello cart");
 };
@@ -49,8 +50,8 @@ const NavigationBar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
-                Home
+              <a className="nav-link" href="/trending">
+                <TrendingUpIcon />
               </a>
             </li>
             <li className="nav-item dropdown">
@@ -65,20 +66,20 @@ const NavigationBar = () => {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="#">
-                    link-0
+                  <a className="dropdown-item" href="/?electronics">
+                    Electronics
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
-                    link-1
+                  <a className="dropdown-item" href="/?videoGames">
+                    Video games
                   </a>
                 </li>
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href="/?mostPopular">
                     most popular
                   </a>
                 </li>
@@ -106,7 +107,7 @@ const NavigationBar = () => {
             </li>
             {/* end: search bar */}
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/cart">
                 <ShoppingCartIcon />
               </a>
             </li>

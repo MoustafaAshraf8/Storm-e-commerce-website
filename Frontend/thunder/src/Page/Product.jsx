@@ -8,20 +8,20 @@ const Product = (props) => {
       style={{ border: "solid 3px blue", height: "100%", position: "fixed" }}
     >
       <div
-        className="topContainer d-flex justify-content-between p-2"
+        className="topContainer d-flex row justify-content-between p-2"
         style={{ border: "solid 3px green", maxHeight: "75%" }}
       >
-        <div className="imgContainer col-8 ps-0">
+        <div className="imgContainer col-12 col-md-6 ps-0">
           {/* <ProductCarousel /> */}
           <img
             className="img-fluid ps-0"
-            style={{ height: "100%", maxWidth: "75%" }}
+            style={{ maxHeight: "100%", maxWidth: "100%" }}
             src="https://placebeard.it/640x360"
             alt="..."
           />
         </div>
-        <div className="infoContainer col-4">
-          <ItemData />
+        <div className="infoContainer col-12 col-md-4 align-self-center">
+          <ItemData name="item-2" price="100" quantity="15" />
         </div>
       </div>
       <div style={{ textAlign: "start" }}>

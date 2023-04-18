@@ -3,18 +3,18 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 const ItemData = (props) => {
   return (
     <div>
-      <div className="itemName d-flex justify-content-between mb-3">
-        <span className="d-block col-3" style={{ textAlign: "left" }}>
-          Name:
-        </span>
-        <span className="d-block">{props.name}</span>
+      <div className="itemName d-flex-column justify-content-start mb-3">
+        <h3 className="d-block col-3" style={{ textAlign: "left" }}>
+          {props.name}
+        </h3>
+        {/* <span className="d-block">{props.name}</span> */}
       </div>
       {/*  */}
       <div className="itemPrice d-flex justify-content-start mb-3">
         <span className="d-block col-3" style={{ textAlign: "left" }}>
-          Price:{" "}
+          Price: {props.price}$
         </span>
-        <span className="d-block">{props.price}</span>
+        {/* <span className="d-block">{props.price}</span> */}
       </div>
       {/*  */}
       <div className="itemQuantity d-flex justify-content-start mb-3">

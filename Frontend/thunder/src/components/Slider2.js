@@ -69,7 +69,10 @@ let checkfn2 = () => {
 
 const Slider2 = () => {
   return (
-    <div style={{ height: "300px" }}>
+    <div
+      className="container-fluid p-0"
+      style={{ height: "300px", width: "75%", border: "solid 3px black" }}
+    >
       <div
         id="carouselExampleCaptions"
         className="carousel slide w-100 h-100"

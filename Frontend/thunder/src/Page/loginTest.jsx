@@ -13,7 +13,7 @@ const loginTest = () => {
       }}
     >
       <div
-        className="card d-flex-column justify-content-center p-3 col-12 col-md-6"
+        className="card d-flex-column justify-content-center p-3 col-12 col-md-3"
         style={{ border: "solid 1px black", borderRadius: "10px" }}
       >
         <div className="ms-2 mb-2" style={{ textAlign: "start" }}>
@@ -22,15 +22,12 @@ const loginTest = () => {
         {/* email area */}
         <form action="#" method="post">
           <div class="emailInput input-group ms-1 me-1 mt-1 mb-3">
-            <span
-              class="input-group-text col-1 d-none d-md-inline"
-              id="basic-addon1"
-            >
+            <span class="input-group-text d-none d-md-inline" id="basic-addon1">
               <AlternateEmailIcon />
             </span>
-            <span class="input-group-text d-inline d-md-none" id="basic-addon1">
+            {/* <span class="input-group-text d-inline d-md-none" id="basic-addon1">
               <AlternateEmailIcon />
-            </span>
+            </span> */}
             <input
               type="email"
               class="form-control"
@@ -41,15 +38,12 @@ const loginTest = () => {
           </div>
           {/* password area */}
           <div class="passwordInput input-group ms-1 me-1 mt-1 mb-3">
-            <span
-              class="input-group-text col-1 d-none d-md-inline"
-              id="basic-addon1"
-            >
+            <span class="input-group-text d-none d-md-inline" id="basic-addon1">
               <LockIcon />
             </span>
-            <span class="input-group-text d-inline d-md-none" id="basic-addon1">
+            {/* <span class="input-group-text d-inline d-md-none" id="basic-addon1">
               <LockIcon />
-            </span>
+            </span> */}
             <input
               type="password"
               class="form-control"
