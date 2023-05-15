@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import LockIcon from "@mui/icons-material/Lock";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+
+let regexEmail = /^\w+@[a-zA-Z_]+\.[a-zA-Z]{2,6}$/;
+let regexPassword = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
 const LoginTest = () => {
   let [Email, setEmail] = useState("");
   let [Password, setPassword] = useState({
@@ -8,15 +12,37 @@ const LoginTest = () => {
     isTouched: false,
   });
 
+  const getIsFormValid = () => {
+    return Email.match(regexEmail) && Password.value.match(regexPassword);
+  };
+
   let emailChanged = (e) => {
     setEmail(e.target.value);
+    if (Email.match(regexEmail)) {
+      console.log(Email + "email accepted");
+    } else {
+      console.log(Email + "wrong email schema");
+    }
   };
   let passwordChanged = (e) => {
     setPassword({ ...Password, value: e.target.value });
-    console.log(Password);
+    if (Password.value.match(regexPassword) && Password.value.length >= 8) {
+      console.log(Password.value + "  strong password");
+    } else {
+      console.log(Password.value + "  weak password");
+    }
   };
+
+  let submitHandle = (e) => {
+    console.log("a7a");
+    e.preventDefault();
+    console.log(`email: ${Email} ==> password: ${Password.value}`);
+  };
+
+  //let validated = Email && Password.value;
+
   return (
-    <div
+    <form
       className="container-fluid d-flex align-items-center justify-content-center"
       style={{
         height: "100%",
@@ -24,6 +50,7 @@ const LoginTest = () => {
         backgroundImage: "url('./Images/storm.jpg')",
         backgroundSize: "cover",
       }}
+      onSubmit={submitHandle}
     >
       <div
         className="card d-flex-column justify-content-center p-3 col-12 col-md-3"
@@ -99,7 +126,11 @@ const LoginTest = () => {
           </div>
           {/* login btn */}
           <div className="d-grid gap-2">
-            <button className="btn btn-primary" type="submit">
+            <button
+              className="btn btn-primary"
+              type="submit"
+              disabled={!getIsFormValid()}
+            >
               login
             </button>
           </div>
@@ -136,7 +167,7 @@ const LoginTest = () => {
           </button>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
