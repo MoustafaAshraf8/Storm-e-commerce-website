@@ -13,7 +13,7 @@ import Card from "./components/Card";
 import Slider2 from "./components/Slider2";
 import SideBarTest from "./components/SideBarTest";
 
-import LoginTest from "./Page/loginTest";
+import LoginTest from "./Page/LoginTest";
 
 function App() {
   return (

@@ -1,9 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import LockIcon from "@mui/icons-material/Lock";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-const loginTest = () => {
+
+let regexEmail = /^\w+@[a-zA-Z_]+\.[a-zA-Z]{2,6}$/;
+let regexPassword = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+const LoginTest = () => {
+  let [Email, setEmail] = useState("");
+  let [Password, setPassword] = useState({
+    value: "",
+    isTouched: false,
+  });
+
+  const getIsFormValid = () => {
+    return Email.match(regexEmail) && Password.value.match(regexPassword);
+  };
+
+  let emailChanged = (e) => {
+    setEmail(e.target.value);
+    if (Email.match(regexEmail)) {
+      console.log(Email + "email accepted");
+    } else {
+      console.log(Email + "wrong email schema");
+    }
+  };
+  let passwordChanged = (e) => {
+    setPassword({ ...Password, value: e.target.value });
+    if (Password.value.match(regexPassword) && Password.value.length >= 8) {
+      console.log(Password.value + "  strong password");
+    } else {
+      console.log(Password.value + "  weak password");
+    }
+  };
+
+  let submitHandle = (e) => {
+    console.log("a7a");
+    e.preventDefault();
+    console.log(`email: ${Email} ==> password: ${Password.value}`);
+  };
+
+  //let validated = Email && Password.value;
+
   return (
-    <div
+    <form
       className="container-fluid d-flex align-items-center justify-content-center"
       style={{
         height: "100%",
@@ -11,6 +50,7 @@ const loginTest = () => {
         backgroundImage: "url('./Images/storm.jpg')",
         backgroundSize: "cover",
       }}
+      onSubmit={submitHandle}
     >
       <div
         className="card d-flex-column justify-content-center p-3 col-12 col-md-3"
@@ -29,6 +69,8 @@ const loginTest = () => {
               <AlternateEmailIcon />
             </span> */}
             <input
+              value={Email}
+              onChange={emailChanged}
               type="email"
               class="form-control"
               placeholder="email"
@@ -45,6 +87,11 @@ const loginTest = () => {
               <LockIcon />
             </span> */}
             <input
+              value={Password.value}
+              onChange={passwordChanged}
+              onBlur={() => {
+                setPassword({ ...Password, isTouched: true });
+              }}
               type="password"
               class="form-control"
               placeholder="password"
@@ -53,6 +100,9 @@ const loginTest = () => {
               required
             />
           </div>
+          {Password.isTouched && Password.value.length < 8 ? (
+            <p style={{ color: "red" }}>password must be of min 8 length</p>
+          ) : null}
 
           {/* remember me + forgot password */}
 
@@ -76,7 +126,11 @@ const loginTest = () => {
           </div>
           {/* login btn */}
           <div className="d-grid gap-2">
-            <button className="btn btn-primary" type="submit">
+            <button
+              className="btn btn-primary"
+              type="submit"
+              disabled={!getIsFormValid()}
+            >
               login
             </button>
           </div>
@@ -113,8 +167,8 @@ const loginTest = () => {
           </button>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
-export default loginTest;
+export default LoginTest;
