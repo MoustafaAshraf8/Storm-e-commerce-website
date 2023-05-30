@@ -3,18 +3,20 @@ import "./App.css";
 import "./Custom.css";
 import { Routes, Route, Link } from "react-router-dom";
 //_____________________________pages______________________________________
-import HomePage from "./Page/HomePage";
 import Product from "./Page/Product";
-import LoginForm from "./Page/LoginForm";
-import Log from "./Page/log";
+
 //_____________________________components_____________________________
-import Nav2 from "./components/Nav2";
-import Card from "./components/Card";
-import Slider2 from "./components/Slider2";
+import Card from "./components/Home_page/Card";
+import Carousel from "./components/Home_page/Carousel";
 import SideBarTest from "./components/SideBarTest";
 
-import LogIn_page from "./components/LogIn/LogIn_page";
-import SignUp_page from "./components/SignUp/SignUp_page";
+//__________________________final pages_______________________________
+
+import NavigationBar from "./components/Navigation_Bar/NavigationBar";
+import HomePage from "./components/Home_page/HomePage";
+import LogInPage from "./components/LogIn_page/LogInPage";
+import SignUp_page from "./components/SignUp_page/SignUp_page";
+import ShoppingCart from "./components/Shopping_Cart_page/ShoppingCart";
 
 function App() {
   return (
@@ -22,12 +24,13 @@ function App() {
       className="App d-flex-column justify-content-center vh-100"
       style={{ border: "solid 3px red" }}
     >
-      <Nav2 />
+      <NavigationBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LogIn_page />} />
-        <Route path="/product/id" element={<Product />} />
+        <Route path="/login" element={<LogInPage />} />
         <Route path="/signup" element={<SignUp_page />} />
+        <Route path="/product/id" element={<Product />} />
+        <Route path="/shoppingcart" element={<ShoppingCart />} />
       </Routes>
     </div>
   );

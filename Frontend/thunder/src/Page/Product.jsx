@@ -11,12 +11,20 @@ const Product = (props) => {
         className="topContainer d-flex row justify-content-between p-2"
         style={{ border: "solid 3px green", maxHeight: "75%" }}
       >
-        <div className="imgContainer col-12 col-md-6 ps-0">
+        <div
+          className="imgContainer col-12 col-md-4 ps-0"
+          style={{ border: "3px solid green" }}
+        >
           {/* <ProductCarousel /> */}
           <img
             className="img-fluid ps-0"
-            style={{ maxHeight: "100%", maxWidth: "100%" }}
-            src="https://placebeard.it/640x360"
+            style={{
+              height: "300px",
+              width: "300px",
+              maxHeight: "100%",
+              maxWidth: "100%",
+            }}
+            src="/Images/storm.jpg"
             alt="..."
           />
         </div>

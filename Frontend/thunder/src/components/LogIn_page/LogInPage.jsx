@@ -6,7 +6,7 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 let regexEmail = /^\w+@[a-zA-Z_]+\.[a-zA-Z]{2,6}$/;
 let regexPassword = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
-const LogIn_page = () => {
+const LogInPage = () => {
   let [Email, setEmail] = useState("");
   let [Password, setPassword] = useState({
     value: "",
@@ -157,4 +157,4 @@ const LogIn_page = () => {
   );
 };
 
-export default LogIn_page;
+export default LogInPage;
