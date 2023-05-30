@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import LockIcon from "@mui/icons-material/Lock";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
+import PersonIcon from "@mui/icons-material/Person";
 
 let regexEmail = /^\w+@[a-zA-Z_]+\.[a-zA-Z]{2,6}$/;
 let regexPassword = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
-const LoginTest = () => {
+const SignUp_page = () => {
+  let [Name, setName] = useState("");
+  let [PhoneNumber, setPhoneNumber] = useState("");
   let [Email, setEmail] = useState("");
   let [Password, setPassword] = useState({
     value: "",
@@ -13,7 +17,26 @@ const LoginTest = () => {
   });
 
   const getIsFormValid = () => {
-    return Email.match(regexEmail) && Password.value.match(regexPassword);
+    return (
+      Email.match(regexEmail) &&
+      Password.value.match(regexPassword) &&
+      Name.length >= 1 &&
+      PhoneNumber.length == 11
+    );
+  };
+
+  let nameChanged = (e) => {
+    setName(e.target.value);
+    console.log(Name);
+  };
+
+  let phonenumberChanged = (e) => {
+    setPhoneNumber(e.target.value);
+    if (PhoneNumber.length == 11) {
+      console.log(PhoneNumber + "phone-number accepted");
+    } else {
+      console.log(PhoneNumber + "wrong phone-number schema");
+    }
   };
 
   let emailChanged = (e) => {
@@ -53,16 +76,55 @@ const LoginTest = () => {
       onSubmit={submitHandle}
     >
       <div
-        className="card d-flex-column justify-content-center p-3 col-12 col-md-3"
-        style={{ border: "solid 1px black", borderRadius: "10px" }}
+        className="card d-flex-column justify-content-center p-3 col-12 col-sm-10 col-md-6"
+        style={{ border: "solid 3px green", borderRadius: "10px" }}
       >
         <div className="ms-2 mb-2" style={{ textAlign: "start" }}>
-          Sign in
+          Sign up
         </div>
-        {/* email area */}
+
         <form action="#" method="post">
+          {/* name area */}
           <div class="emailInput input-group ms-1 me-1 mt-1 mb-3">
-            <span class="input-group-text d-none d-md-inline" id="basic-addon1">
+            <span class="input-group-text d-none d-sm-inline" id="basic-addon1">
+              <PersonIcon />
+            </span>
+            {/* <span class="input-group-text d-inline d-md-none" id="basic-addon1">
+              <AlternateEmailIcon />
+            </span> */}
+            <input
+              value={Name}
+              onChange={nameChanged}
+              type="text"
+              class="form-control"
+              placeholder="name"
+              aria-label="name"
+              aria-describedby="basic-addon1"
+              required
+            />
+          </div>
+          {/* phone_number area */}
+          <div class="emailInput input-group ms-1 me-1 mt-1 mb-3">
+            <span class="input-group-text d-none d-sm-inline" id="basic-addon1">
+              <PhoneIphoneIcon />
+            </span>
+            {/* <span class="input-group-text d-inline d-md-none" id="basic-addon1">
+              <AlternateEmailIcon />
+            </span> */}
+            <input
+              value={PhoneNumber}
+              onChange={phonenumberChanged}
+              type="text"
+              class="form-control"
+              placeholder="0123456789"
+              aria-label="phonenumber"
+              aria-describedby="basic-addon1"
+              required
+            />
+          </div>
+          {/* email area */}
+          <div class="emailInput input-group ms-1 me-1 mt-1 mb-3">
+            <span class="input-group-text d-none d-sm-inline" id="basic-addon1">
               <AlternateEmailIcon />
             </span>
             {/* <span class="input-group-text d-inline d-md-none" id="basic-addon1">
@@ -73,14 +135,14 @@ const LoginTest = () => {
               onChange={emailChanged}
               type="email"
               class="form-control"
-              placeholder="email"
+              placeholder="ABC@xyz.com"
               aria-label="email"
               aria-describedby="basic-addon1"
             />
           </div>
           {/* password area */}
           <div class="passwordInput input-group ms-1 me-1 mt-1 mb-3">
-            <span class="input-group-text d-none d-md-inline" id="basic-addon1">
+            <span class="input-group-text d-none d-sm-inline" id="basic-addon1">
               <LockIcon />
             </span>
             {/* <span class="input-group-text d-inline d-md-none" id="basic-addon1">
@@ -94,7 +156,7 @@ const LoginTest = () => {
               }}
               type="password"
               class="form-control"
-              placeholder="password"
+              placeholder="********"
               aria-label="password"
               aria-describedby="basic-addon1"
               required
@@ -106,24 +168,6 @@ const LoginTest = () => {
 
           {/* remember me + forgot password */}
 
-          <div className="RememberForgot d-flex justify-content-between mb-2">
-            <div class="rememberMe form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
-              />
-              <label className="form-check-label" for="flexCheckDefault">
-                Remember me
-              </label>
-            </div>
-            <div className="forgotPassword">
-              <a className="text-reset" href="#">
-                Forgot password
-              </a>
-            </div>
-          </div>
           {/* login btn */}
           <div className="d-grid gap-2">
             <button
@@ -131,7 +175,7 @@ const LoginTest = () => {
               type="submit"
               disabled={!getIsFormValid()}
             >
-              login
+              SignUp
             </button>
           </div>
         </form>
@@ -171,4 +215,4 @@ const LoginTest = () => {
   );
 };
 
-export default LoginTest;
+export default SignUp_page;

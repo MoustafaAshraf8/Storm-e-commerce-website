@@ -13,7 +13,8 @@ import Card from "./components/Card";
 import Slider2 from "./components/Slider2";
 import SideBarTest from "./components/SideBarTest";
 
-import LoginTest from "./Page/LoginTest";
+import LogIn_page from "./components/LogIn/LogIn_page";
+import SignUp_page from "./components/SignUp/SignUp_page";
 
 function App() {
   return (
@@ -24,8 +25,9 @@ function App() {
       <Nav2 />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginTest />} />
+        <Route path="/login" element={<LogIn_page />} />
         <Route path="/product/id" element={<Product />} />
+        <Route path="/signup" element={<SignUp_page />} />
       </Routes>
     </div>
   );
