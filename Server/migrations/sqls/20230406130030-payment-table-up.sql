@@ -1,7 +1,7 @@
 create table paymentMethods
 (
-   clientID INTEGER,
-   card_number INTEGER,
-   wallet FLOAT,
-   constraint foreign_key FOREIGN key (clientID) REFERENCES client (clientID) on delete CASCADE
+   ClientID INTEGER,
+   Card_number INTEGER,
+   Wallet FLOAT,
+   CONSTRAINT foreign_key FOREIGN key (ClientID) REFERENCES client (ClientID) on delete CASCADE
 );

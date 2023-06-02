@@ -1,6 +1,6 @@
 create table cart
 (
-   clientID INTEGER,
-   cartID INTEGER primary key,
-   CONSTRAINT foreign_key FOREIGN KEY (clientID) REFERENCES client (clientID) on DELETE CASCADE
+   CartID serial primary key,
+   ClientID INTEGER,
+   CONSTRAINT foreign_key FOREIGN KEY (ClientID) REFERENCES client (ClientID) on delete CASCADE
 );
