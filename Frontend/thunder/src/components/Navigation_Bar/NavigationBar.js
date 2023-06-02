@@ -4,6 +4,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import HomeSharpIcon from "@mui/icons-material/HomeSharp";
 import LoginIcon from "@mui/icons-material/Login";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import ThunderstormIcon from "@mui/icons-material/Thunderstorm";
 const goToCart = () => {
   console.log("hello cart");
 };
@@ -21,7 +22,7 @@ const NavigationBar = () => {
       >
         {/* website logo */}
         <a className="navbar-brand ms-2 mr-0" href="/">
-          Website
+          <ThunderstormIcon fontSize="large" />
         </a>
         <button
           className="navbar-toggler ml-5"
@@ -107,7 +108,7 @@ const NavigationBar = () => {
             </li>
             {/* end: search bar */}
             <li className="nav-item">
-              <a className="nav-link" href="/cart">
+              <a className="nav-link" href="/shoppingcart">
                 <ShoppingCartIcon />
               </a>
             </li>

@@ -1,10 +1,10 @@
 import React from "react";
-import Slider2 from "../components/Slider2";
-import Card from "../components/Card";
+import Carousel from "./Carousel";
+import Card from "./Card";
 const HomePage = () => {
   return (
     <div>
-      <Slider2 />
+      <Carousel />
       <Card />
     </div>
   );

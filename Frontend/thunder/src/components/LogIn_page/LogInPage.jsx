@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import LockIcon from "@mui/icons-material/Lock";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 
 let regexEmail = /^\w+@[a-zA-Z_]+\.[a-zA-Z]{2,6}$/;
 let regexPassword = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
-const LoginTest = () => {
+const LogInPage = () => {
   let [Email, setEmail] = useState("");
   let [Password, setPassword] = useState({
     value: "",
@@ -53,8 +54,8 @@ const LoginTest = () => {
       onSubmit={submitHandle}
     >
       <div
-        className="card d-flex-column justify-content-center p-3 col-12 col-md-3"
-        style={{ border: "solid 1px black", borderRadius: "10px" }}
+        className="card d-flex-column justify-content-center p-3 col-12 col-sm-10 col-md-6"
+        style={{ border: "solid 3px green", borderRadius: "10px" }}
       >
         <div className="ms-2 mb-2" style={{ textAlign: "start" }}>
           Sign in
@@ -142,33 +143,18 @@ const LoginTest = () => {
           <hr className="hr d-block col-5" />
         </div>
 
-        {/* login btn */}
-        <div className="d-grid gap-2 mb-2">
-          <button className="btn btn-primary" type="button">
-            Facebook
-          </button>
-        </div>
-        <div className="d-grid gap-2 mb-2">
-          <button
-            className="btn btn-primary"
-            type="button"
-            style={{ backgroundColor: "rgb(255,69,0)", border: "none" }}
-          >
-            G-mail
-          </button>
-        </div>
-        <div className="d-grid gap-2 mb-2">
-          <button
-            className="btn btn-primary"
-            type="button"
-            style={{ backgroundColor: "rgb(30,144,255)", border: "none" }}
-          >
-            Twitter
-          </button>
+        {/* signup btn */}
+        <div className="d-grid gap-2">
+          {/* <button className="btn btn-primary" >
+            signup
+          </button> */}
+          <a href="/signup" className="btn btn-primary">
+            Sign up
+          </a>
         </div>
       </div>
     </form>
   );
 };
 
-export default LoginTest;
+export default LogInPage;

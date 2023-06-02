@@ -67,7 +67,7 @@ let checkfn2 = () => {
   }
 };
 
-const Slider2 = () => {
+const Carousel = () => {
   return (
     <div
       className="container-fluid p-0"
@@ -154,4 +154,4 @@ const Slider2 = () => {
   );
 };
 
-export default Slider2;
+export default Carousel;
