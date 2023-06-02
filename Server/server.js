@@ -8,7 +8,7 @@ let { LoginRouter } = require("./Routes/LoginRouter");
 let { SignupRouter } = require("./Routes/SignUpRouter");
 // let { SellerRouter } = require("./Routes/SellerRouter");
 // let { ClientRouter } = require("./Routes/ClientRouter");
-// let { ItemRouter } = require("./Routes/ItemRouter");
+let { ItemRouter } = require("./Routes/ItemRouter");
 // let { CartRouter } = require("./Routes/CartRouter");
 
 const corsOptions = {
@@ -31,7 +31,7 @@ app.use("/login", LoginRouter);
 app.use("/signup", SignupRouter);
 // app.use("/seller", SellerRouter);
 // app.use("/client", ClientRouter);
-// app.use("/item", ItemRouter);
+app.use("/item", ItemRouter);
 // app.use("/cart", CartRouter);
 
 //server listen on port:ENV_PORT

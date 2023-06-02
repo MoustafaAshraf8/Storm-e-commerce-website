@@ -9,7 +9,7 @@
 
 create table seller
 (
-   sellerID serial,
+   SellerID serial primary key,
    Name varchar(50) not null,
    Email varchar(50) unique not null,
    Password varchar(50) not null,

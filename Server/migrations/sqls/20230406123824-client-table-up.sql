@@ -9,11 +9,11 @@
 
 create table client
 (
-   clientID serial,
+   ClientID serial,
    Name varchar(50) not null,
    Email varchar(50) unique not null,
    Password varchar(50) not null,
    Phone varchar(11) unique,
    Address varchar(50),
-   constraint pk primary key (clientID)
+   constraint pk primary key (ClientID)
 );
