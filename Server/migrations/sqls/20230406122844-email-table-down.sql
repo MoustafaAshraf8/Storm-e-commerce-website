@@ -1,1 +1,1 @@
-drop table email;
+-- drop table email;
