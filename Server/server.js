@@ -9,7 +9,7 @@ let { SignupRouter } = require("./Routes/SignUpRouter");
 // let { SellerRouter } = require("./Routes/SellerRouter");
 // let { ClientRouter } = require("./Routes/ClientRouter");
 let { ItemRouter } = require("./Routes/ItemRouter");
-// let { CartRouter } = require("./Routes/CartRouter");
+let { CartRouter } = require("./Routes/CartRouter");
 
 const corsOptions = {
   origin: "http://localhost:3000",
@@ -32,7 +32,7 @@ app.use("/signup", SignupRouter);
 // app.use("/seller", SellerRouter);
 // app.use("/client", ClientRouter);
 app.use("/item", ItemRouter);
-// app.use("/cart", CartRouter);
+app.use("/cart", CartRouter);
 
 //server listen on port:ENV_PORT
 server.listen((port = process.env.PORT), () => {

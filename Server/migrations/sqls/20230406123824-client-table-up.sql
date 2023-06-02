@@ -17,3 +17,27 @@ create table client
    Address varchar(50),
    constraint pk primary key (ClientID)
 );
+
+INSERT INTO client
+(
+   Name,
+   Email,
+   Password,
+   Phone,
+   Address
+)
+VALUES
+(
+   'Ahmed',
+   'ahmad@sdc.com',
+   '123',
+   '0123465798',
+   'Cairo'
+),
+(
+   'mohamad',
+   'mohamad@sdc.com',
+   '123',
+   '3535',
+   'Cairo'
+)
