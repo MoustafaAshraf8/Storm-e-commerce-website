@@ -14,6 +14,6 @@ create table client
    Email varchar(50) unique not null,
    Password varchar(50) not null,
    Phone varchar(11) unique,
-   Address varchar(50),
+   Address varchar(50) DEFAULT null,
    constraint pk primary key (ClientID)
 );

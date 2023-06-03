@@ -1,3 +1,8 @@
+const bcrypt = require("bcrypt");
+
 const fn = require("./Utilities/Encryption");
-fn.hashPassword("123456");
-fn.comparePassword("123456");
+let hashed = fn.hashPassword("password132");
+//let result = fn.comparePassword("123456", hashed);
+
+console.log(hashed);
+//console.log(result);

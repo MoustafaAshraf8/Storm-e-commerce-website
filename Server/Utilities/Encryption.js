@@ -4,7 +4,7 @@ function hashPassword(plaintextPassword) {
   bcrypt
     .hash(plaintextPassword, 10)
     .then((hash) => {
-      //console.log(hash);
+      console.log(typeof hash);
       return hash;
     })
     .catch((err) => {
@@ -12,15 +12,18 @@ function hashPassword(plaintextPassword) {
     });
 }
 
-function comparePassword(plaintextPassword) {
-  let hash = "$2b$10$kyaFH3j6sg28d.qiei.Ye.ZeCIdXuVXgOCFRL3HDygoHQQ0wXHo1O";
+function comparePassword(plaintextPassword, hashedPassword) {
+  //let hash = "$2b$10$kyaFH3j6sg28d.qiei.Ye.ZeCIdXuVXgOCFRL3HDygoHQQ0wXHo1O";
   bcrypt
-    .compare(plaintextPassword, hash)
+    .compare(plaintextPassword, hashedPassword)
     .then((result) => {
       console.log(result);
     })
+    .then((result) => {
+      return result;
+    })
     .catch((err) => {
-      console.log(err);
+      return false;
     });
 }
 

@@ -66,4 +66,34 @@ ItemRouter.route("/")
       });
   });
 
+//______________________________________________________________________
+
+ItemRouter.route("/:id").get((req, res, next) => {
+  let query = `select * from product where ProductID=${req.params.id}`;
+  pool
+    .query(query)
+    .then(
+      (result) => {
+        console.log(result.rows);
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json");
+        res.json(result.rows[0]);
+      },
+      (err) => {
+        console.log(err);
+        res.json({
+          message: "a7a",
+        });
+      }
+    )
+    .catch((err) => {
+      console.log(err);
+      res.statusCode = 400;
+      res.setHeader("Content-Type", "application/json");
+      res.json({
+        message: err.message,
+      });
+    });
+});
+
 module.exports = { ItemRouter };

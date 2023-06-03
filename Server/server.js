@@ -31,7 +31,7 @@ app.use("/login", LoginRouter);
 app.use("/signup", SignupRouter);
 // app.use("/seller", SellerRouter);
 // app.use("/client", ClientRouter);
-app.use("/item", ItemRouter);
+app.use("/product", ItemRouter);
 // app.use("/cart", CartRouter);
 
 //server listen on port:ENV_PORT
