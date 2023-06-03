@@ -39,7 +39,7 @@ const LogInPage = () => {
     console.log("a7a");
     e.preventDefault();
     console.log(`email: ${Email} ==> password: ${Password.value}`);
-    setSubmit(true);
+    setSubmit(!Submit);
   };
 
   useLogin(Email, Password.value, Submit);
