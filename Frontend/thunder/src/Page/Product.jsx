@@ -1,7 +1,16 @@
 import React from "react";
 import ProductCarousel from "./ProductCarousel";
 import ItemData from "./ItemData";
+import { useState } from "react";
+import useGetProduct from "../Shared/useGetProduct";
+import { useParams } from "react-router-dom";
+
 const Product = (props) => {
+  const [Product, setProduct] = useState({});
+  const productid = useParams().id;
+  useGetProduct(productid, setProduct);
+  console.log(Product);
+
   return (
     <div
       className="container-fluid d-flex-column justify-content-center"
@@ -29,7 +38,7 @@ const Product = (props) => {
           />
         </div>
         <div className="infoContainer col-12 col-md-4 align-self-center">
-          <ItemData name="item-2" price="100" quantity="15" />
+          <ItemData name={Product.name} price="100" quantity="15" />
         </div>
       </div>
       <div style={{ textAlign: "start" }}>
