@@ -2,7 +2,6 @@ import logo from "./logo.svg";
 import "./App.css";
 import "./Custom.css";
 import { Routes, Route, Link } from "react-router-dom";
-import { UserContextProvider, useUserContext } from "./Shared/UserContext";
 //_____________________________pages______________________________________
 import Product from "./Page/Product";
 

@@ -1,15 +1,23 @@
 import React from "react";
+import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import HomeSharpIcon from "@mui/icons-material/HomeSharp";
 import LoginIcon from "@mui/icons-material/Login";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import ThunderstormIcon from "@mui/icons-material/Thunderstorm";
+import useSearch from "../../Shared/useSearch";
 const goToCart = () => {
   console.log("hello cart");
 };
 
 const NavigationBar = () => {
+  const [SearchValue, setSearchValue] = useState("");
+  const SearchValueChanged = (e) => {
+    console.log(e.target.value);
+    setSearchValue(e.target.value);
+  };
+  useSearch(SearchValue);
   return (
     <nav
       className="container-fluid nav justify-content-left navbar navbar-expand-md  bg-primary bg-gradient navbarscroll p-0 m-0"
@@ -91,6 +99,8 @@ const NavigationBar = () => {
               <div className="input-group w-100 p-0">
                 <div className="form-outline d-flex col-12 col-sm-11 h-100 pt-2">
                   <input
+                    value={SearchValue}
+                    onChange={SearchValueChanged}
                     type="search"
                     id="form1"
                     class="nav-input nav-progressive-attribute bg-dark w-100"

@@ -1,6 +1,12 @@
 import { createContext, useContext, useState } from "react";
 
-let UserContext = createContext({});
+let UserContext = createContext({
+  ClientID: "",
+  Name: "",
+  Email: "",
+  Phone: "",
+  Address: "",
+});
 
 export let UserContextProvider = ({ children }) => {
   let [User, setUser] = useState({
