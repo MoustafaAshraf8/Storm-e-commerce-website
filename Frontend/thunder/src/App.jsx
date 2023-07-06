@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import "./Custom.css";
 import { Routes, Route, Link } from "react-router-dom";
+import { UserContextProvider, useUserContext } from "./Shared/useUserContext";
 //_____________________________pages______________________________________
 import Product from "./Page/Product";
 
@@ -20,19 +21,21 @@ import ShoppingCart from "./components/Shopping_Cart_page/ShoppingCart";
 
 function App() {
   return (
-    <div
-      className="App d-flex-column justify-content-center vh-100"
-      style={{ border: "solid 3px red" }}
-    >
-      <NavigationBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LogInPage />} />
-        <Route path="/signup" element={<SignUp_page />} />
-        <Route path="/product/:id" element={<Product />} />
-        <Route path="/shoppingcart" element={<ShoppingCart />} />
-      </Routes>
-    </div>
+    <UserContextProvider>
+      <div
+        className="App d-flex-column justify-content-center vh-100"
+        style={{ border: "solid 3px red" }}
+      >
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LogInPage />} />
+          <Route path="/signup" element={<SignUp_page />} />
+          <Route path="/product/:id" element={<Product />} />
+          <Route path="/shoppingcart" element={<ShoppingCart />} />
+        </Routes>
+      </div>
+    </UserContextProvider>
   );
 }
 

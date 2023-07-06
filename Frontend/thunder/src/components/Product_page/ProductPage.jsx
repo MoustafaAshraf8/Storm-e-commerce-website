@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 const ProductPage = () => {
   const [Product, setProduct] = useState({});
   const productid = useParams().productid;
-  console.log("5555555555555555555555");
+  //   console.log("5555555555555555555555");
   useGetProduct(productid, setProduct);
   return (
     // <div class="container mt-5 mb-5">

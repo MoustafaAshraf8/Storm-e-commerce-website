@@ -116,6 +116,7 @@ const NavigationBar = () => {
                 </button>
               </div>
             </li>
+
             {/* end: search bar */}
             <li className="nav-item">
               <a className="nav-link" href="/shoppingcart">

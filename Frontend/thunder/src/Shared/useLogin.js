@@ -8,7 +8,7 @@ const useLogin = (Email, Password, Submit) => {
   const login = async () => {
     try {
       //let { name, email, password, phone, address } = req.body;
-      console.log("55555555555555555");
+      console.log("");
       console.log(Email, Password);
       let obj = {
         email: Email,
