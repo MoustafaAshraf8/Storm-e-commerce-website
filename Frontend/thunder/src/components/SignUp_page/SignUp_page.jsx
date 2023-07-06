@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import LockIcon from "@mui/icons-material/Lock";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import PersonIcon from "@mui/icons-material/Person";
+import useSignup from "../../Shared/useSignup";
+import { useState, useEffect } from "react";
 
 let regexEmail = /^\w+@[a-zA-Z_]+\.[a-zA-Z]{2,6}$/;
 let regexPassword = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
@@ -15,6 +17,8 @@ const SignUp_page = () => {
     value: "",
     isTouched: false,
   });
+  let [Submit, setSubmit] = useState(false);
+  const navigate = useNavigate();
 
   const getIsFormValid = () => {
     return (
@@ -59,13 +63,21 @@ const SignUp_page = () => {
   let submitHandle = (e) => {
     console.log("a7a");
     e.preventDefault();
-    console.log(`email: ${Email} ==> password: ${Password.value}`);
+    if (getIsFormValid()) {
+      console.log(
+        `name: ${Name} ==> phone-number: ${PhoneNumber} ==> email: ${Email} ==> password: ${Password.value}`
+      );
+      setSubmit(true);
+    }
   };
+
+  useSignup(Name, PhoneNumber, Email, Password.value, Submit);
+  Submit ? navigate("/") : console.log("not yet");
 
   //let validated = Email && Password.value;
 
   return (
-    <form
+    <div
       className="container-fluid d-flex align-items-center justify-content-center"
       style={{
         height: "100%",
@@ -73,7 +85,7 @@ const SignUp_page = () => {
         backgroundImage: "url('./Images/storm.jpg')",
         backgroundSize: "cover",
       }}
-      onSubmit={submitHandle}
+      // onSubmit={submitHandle}
     >
       <div
         className="card d-flex-column justify-content-center p-3 col-12 col-sm-10 col-md-6"
@@ -83,7 +95,7 @@ const SignUp_page = () => {
           Sign up
         </div>
 
-        <form action="#" method="post">
+        <form onSubmit={submitHandle}>
           {/* name area */}
           <div class="emailInput input-group ms-1 me-1 mt-1 mb-3">
             <span class="input-group-text d-none d-sm-inline" id="basic-addon1">
@@ -170,11 +182,7 @@ const SignUp_page = () => {
 
           {/* login btn */}
           <div className="d-grid gap-2">
-            <button
-              className="btn btn-primary"
-              type="submit"
-              disabled={!getIsFormValid()}
-            >
+            <button className="btn btn-primary" disabled={!getIsFormValid()}>
               SignUp
             </button>
           </div>
@@ -211,7 +219,7 @@ const SignUp_page = () => {
           </button>
         </div>
       </div>
-    </form>
+    </div>
   );
 };
 

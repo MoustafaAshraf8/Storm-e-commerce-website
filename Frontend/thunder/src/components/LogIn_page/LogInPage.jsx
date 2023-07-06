@@ -1,10 +1,8 @@
 import React, { useState } from "react";
+import useLogin from "../../Shared/useLogin";
 import { Link } from "react-router-dom";
 import LockIcon from "@mui/icons-material/Lock";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-
-let regexEmail = /^\w+@[a-zA-Z_]+\.[a-zA-Z]{2,6}$/;
-let regexPassword = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
 const LogInPage = () => {
   let [Email, setEmail] = useState("");
@@ -12,38 +10,44 @@ const LogInPage = () => {
     value: "",
     isTouched: false,
   });
+  let [Submit, setSubmit] = useState(false);
 
-  const getIsFormValid = () => {
-    return Email.match(regexEmail) && Password.value.match(regexPassword);
-  };
+  //   const getIsFormValid = () => {
+  //     return Email.match(regexEmail) && Password.value.match(regexPassword);
+  //   };
 
   let emailChanged = (e) => {
     setEmail(e.target.value);
-    if (Email.match(regexEmail)) {
-      console.log(Email + "email accepted");
-    } else {
-      console.log(Email + "wrong email schema");
-    }
+    console.log(Email);
+    //  if (Email.match(regexEmail)) {
+    //    console.log(Email + "email accepted");
+    //  } else {
+    //    console.log(Email + "wrong email schema");
+    //  }
   };
   let passwordChanged = (e) => {
     setPassword({ ...Password, value: e.target.value });
-    if (Password.value.match(regexPassword) && Password.value.length >= 8) {
-      console.log(Password.value + "  strong password");
-    } else {
-      console.log(Password.value + "  weak password");
-    }
+    console.log(Password.value);
+    //  if (Password.value.match(regexPassword) && Password.value.length >= 8) {
+    //    console.log(Password.value + "  strong password");
+    //  } else {
+    //    console.log(Password.value + "  weak password");
+    //  }
   };
 
   let submitHandle = (e) => {
     console.log("a7a");
     e.preventDefault();
     console.log(`email: ${Email} ==> password: ${Password.value}`);
+    setSubmit(!Submit);
   };
 
+  useLogin(Email, Password.value, Submit);
+  //setSubmit(false);
   //let validated = Email && Password.value;
 
   return (
-    <form
+    <div
       className="container-fluid d-flex align-items-center justify-content-center"
       style={{
         height: "100%",
@@ -51,7 +55,6 @@ const LogInPage = () => {
         backgroundImage: "url('./Images/storm.jpg')",
         backgroundSize: "cover",
       }}
-      onSubmit={submitHandle}
     >
       <div
         className="card d-flex-column justify-content-center p-3 col-12 col-sm-10 col-md-6"
@@ -61,7 +64,7 @@ const LogInPage = () => {
           Sign in
         </div>
         {/* email area */}
-        <form action="#" method="post">
+        <form onSubmit={submitHandle}>
           <div class="emailInput input-group ms-1 me-1 mt-1 mb-3">
             <span class="input-group-text d-none d-md-inline" id="basic-addon1">
               <AlternateEmailIcon />
@@ -101,9 +104,6 @@ const LogInPage = () => {
               required
             />
           </div>
-          {Password.isTouched && Password.value.length < 8 ? (
-            <p style={{ color: "red" }}>password must be of min 8 length</p>
-          ) : null}
 
           {/* remember me + forgot password */}
 
@@ -127,13 +127,7 @@ const LogInPage = () => {
           </div>
           {/* login btn */}
           <div className="d-grid gap-2">
-            <button
-              className="btn btn-primary"
-              type="submit"
-              disabled={!getIsFormValid()}
-            >
-              login
-            </button>
+            <button className="btn btn-primary">login</button>
           </div>
         </form>
         {/* or */}
@@ -153,7 +147,7 @@ const LogInPage = () => {
           </a>
         </div>
       </div>
-    </form>
+    </div>
   );
 };
 
