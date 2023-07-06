@@ -1,16 +1,18 @@
 let express = require("express");
 let bodyparser = require("body-parser");
-let ItemRouter = express.Router();
+let ProductRouter = express.Router();
 const Encrypter = require("../Utilities/Encryption");
 require("dotenv").config();
 const { pool } = require("../config");
 
-ItemRouter.use(bodyparser.urlencoded({ extended: true }));
-ItemRouter.use(express.json());
+ProductRouter.use(bodyparser.urlencoded({ extended: true }));
+ProductRouter.use(express.json());
 
-ItemRouter.route("/")
+ProductRouter.route("/")
   .get((req, res, next) => {
-    let query = `select * from product`;
+    let query = req.query.name
+      ? `select * from product where Name Like '${req.query.name}%'`
+      : `select * from product`;
     pool
       .query(query)
       .then(
@@ -18,7 +20,9 @@ ItemRouter.route("/")
           console.log(result.rows);
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
-          res.json(result.rows);
+          result != undefined
+            ? res.json(result.rows)
+            : res.json([{ message: "no products found" }]);
         },
         (err) => {
           console.log(err);
@@ -68,7 +72,7 @@ ItemRouter.route("/")
 
 //______________________________________________________________________
 
-ItemRouter.route("/:id").get((req, res, next) => {
+ProductRouter.route("/:id").get((req, res, next) => {
   let query = `select * from product where ProductID=${req.params.id}`;
   pool
     .query(query)
@@ -96,4 +100,4 @@ ItemRouter.route("/:id").get((req, res, next) => {
     });
 });
 
-module.exports = { ItemRouter };
+module.exports = { ProductRouter };
